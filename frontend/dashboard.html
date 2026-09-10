@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — OfferShield AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-shield">🛡</div>
+      OfferShield AI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="verify.html">Verify Offer</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-actions" id="navActions">
+      <a href="login.html"    class="btn btn-ghost   btn-sm" id="navLogin">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" id="navRegister">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</nav>
+
+<div class="dash-layout">
+  <!-- Sidebar -->
+  <aside class="dash-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="active">📊 Overview</a></li>
+        <li><a href="verify.html">🔍 Verify New Offer</a></li>
+        <li><a href="#history">📋 History</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Account</div>
+      <ul class="sidebar-nav" id="sidebarAccountNav">
+        <li><a href="login.html"    id="sidebarLogin">🔑 Login</a></li>
+        <li><a href="register.html" id="sidebarRegister">✨ Create Account</a></li>
+        <li class="hidden" id="sidebarLogoutItem"><a href="#" onclick="logout()">🚪 Logout</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="dash-main">
+    <div class="page-header">
+      <div>
+        <div class="page-title" id="dashGreeting">My Verification Dashboard</div>
+        <div class="page-sub">Track your offer verification history and risk analysis results.</div>
+      </div>
+      <a href="verify.html" class="btn btn-primary">+ Verify New Offer</a>
+    </div>
+
+    <!-- Demo notice -->
+    <div class="demo-mode-note" id="demoNote">
+      <span>⚠️ <strong>Demo Mode:</strong> You're viewing session data.
+        <a href="register.html" style="color:var(--yellow); text-decoration:underline; font-weight:600;">Create a free account</a>
+        to permanently save your verification history.
+      </span>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stat-grid">
+      <div class="stat-card stat-total">
+        <div class="stat-val" id="statTotal">—</div>
+        <div class="stat-lbl">Total Verified</div>
+      </div>
+      <div class="stat-card stat-low">
+        <div class="stat-val" id="statLow">—</div>
+        <div class="stat-lbl">Low Risk</div>
+      </div>
+      <div class="stat-card stat-needs">
+        <div class="stat-val" id="statNeeds">—</div>
+        <div class="stat-lbl">Needs Verification</div>
+      </div>
+      <div class="stat-card stat-high">
+        <div class="stat-val" id="statHigh">—</div>
+        <div class="stat-lbl">High Risk</div>
+      </div>
+      <div class="stat-card stat-vh">
+        <div class="stat-val" id="statVH">—</div>
+        <div class="stat-lbl">Very High Risk</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid-2 mb-3">
+      <div class="chart-panel">
+        <div class="chart-panel-title">Risk Distribution</div>
+        <div id="riskChart">
+          <div class="bar-row">
+            <span class="bar-lbl">Low Risk</span>
+            <div class="bar-track"><div class="bar-fill" id="barLow" style="width:0%; background:var(--green);"></div></div>
+            <span class="bar-val" id="bvLow">0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-lbl">Needs Verification</span>
+            <div class="bar-track"><div class="bar-fill" id="barNeeds" style="width:0%; background:var(--yellow);"></div></div>
+            <span class="bar-val" id="bvNeeds">0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-lbl">High Risk</span>
+            <div class="bar-track"><div class="bar-fill" id="barHigh" style="width:0%; background:var(--orange);"></div></div>
+            <span class="bar-val" id="bvHigh">0</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-lbl">Very High Risk</span>
+            <div class="bar-track"><div class="bar-fill" id="barVH" style="width:0%; background:var(--red);"></div></div>
+            <span class="bar-val" id="bvVH">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-panel">
+        <div class="chart-panel-title">Quick Actions</div>
+        <div style="display:flex; flex-direction:column; gap:.75rem;">
+          <a href="verify.html" class="btn btn-primary w-100">🔍 Verify a New Offer</a>
+          <a href="verify.html?demo=high_risk" class="btn btn-outline w-100">🎯 Try High Risk Demo</a>
+          <a href="verify.html?demo=low_risk"  class="btn btn-outline w-100">🎯 Try Low Risk Demo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Table -->
+    <div class="history-wrap" id="history">
+      <div class="history-head">
+        <span class="history-head-title">📋 Verification History</span>
+        <a href="verify.html" class="btn btn-primary btn-sm">+ New Verification</a>
+      </div>
+      <div id="historyTableContainer">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th class="hide-mobile">Role</th>
+              <th>Risk Score</th>
+              <th>Status</th>
+              <th class="hide-mobile">Date</th>
+              <th>Report</th>
+            </tr>
+          </thead>
+          <tbody id="historyTbody">
+            <tr>
+              <td colspan="6">
+                <div class="tbl-empty">
+                  <span class="tbl-empty-icon">📋</span>
+                  No verifications yet. <a href="verify.html">Verify your first offer</a> to see results here.
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/report.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

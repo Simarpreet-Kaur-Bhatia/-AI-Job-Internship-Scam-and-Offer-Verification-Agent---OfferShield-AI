@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — OfferShield AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-shield">🛡</div>
+      OfferShield AI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="verify.html">Verify Offer</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="how-it-works.html" class="active">How It Works</a></li>
+    </ul>
+    <div class="nav-actions" id="navActions">
+      <a href="login.html"    class="btn btn-ghost   btn-sm" id="navLogin">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" id="navRegister">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</nav>
+
+<!-- Header -->
+<div class="hiw-header">
+  <div class="container-sm">
+    <div class="label-tag">Platform Overview</div>
+    <h1 style="font-size:2rem; font-weight:900; margin-bottom:.75rem;">How OfferShield AI Works</h1>
+    <p style="max-width:520px; margin:0 auto; font-size:1rem;">
+      A transparent, step-by-step verification workflow that shows you the evidence and reasoning behind every risk assessment.
+    </p>
+  </div>
+</div>
+
+<div style="background:var(--surface); padding:3rem 1.5rem;">
+  <div class="container-md">
+
+    <!-- THE PROBLEM -->
+    <div class="report-section mb-4">
+      <div class="report-section-title">🎯 The Problem We Solve</div>
+      <p style="margin-bottom:1rem;">Students and job seekers receive offers via email, WhatsApp, LinkedIn, Telegram, and job portals. Some contain warning indicators most people don't know to look for:</p>
+      <div class="grid-2">
+        <ul style="color:var(--text-muted); font-size:.875rem; padding-left:1.25rem; line-height:2.1;">
+          <li>Upfront registration or security fees</li>
+          <li>Personal email used for official recruiting</li>
+          <li>Urgency and pressure tactics</li>
+          <li>Company and recruiter information mismatches</li>
+        </ul>
+        <ul style="color:var(--text-muted); font-size:.875rem; padding-left:1.25rem; line-height:2.1;">
+          <li>Requests for sensitive financial information</li>
+          <li>Suspicious or shortened links</li>
+          <li>Non-standard recruitment processes</li>
+          <li>Vague or unverifiable company details</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STEPS -->
+    <div class="report-section mb-4">
+      <div class="report-section-title">📋 5-Step Verification Workflow</div>
+      <div class="steps-timeline">
+        <div class="step-row">
+          <div class="step-circle">1</div>
+          <div class="step-body">
+            <h3>Submit Your Offer</h3>
+            <p>Upload an offer letter or document (PDF, DOC, DOCX, JPG, PNG), paste a complete recruitment message, or enter an offer URL. No account required.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">2</div>
+          <div class="step-body">
+            <h3>Extract Important Information</h3>
+            <p>The Document Analysis Agent identifies company name, recruiter details, job title, salary, joining conditions, payment requests, URLs, and key clauses.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">3</div>
+          <div class="step-body">
+            <h3>Analyse Verification Signals</h3>
+            <p>Multiple specialised agents check for payment patterns, email domain consistency, urgency language, information mismatches, sensitive info requests, and non-standard recruitment processes.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">4</div>
+          <div class="step-body">
+            <h3>Generate Explainable Risk Score</h3>
+            <p>A transparent rule-based scoring system calculates a Risk Assessment Score (0–100). Every point is attributed to a specific indicator with cited evidence — nothing is hidden.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-circle">5</div>
+          <div class="step-body">
+            <h3>Take Informed Action</h3>
+            <p>Receive specific, prioritised recommendations based on detected indicators. Know exactly what to verify, what to avoid, and what to confirm independently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGENTS -->
+    <div class="report-section mb-4">
+      <div class="report-section-title">🤖 6 AI Verification Agents</div>
+      <p style="font-size:.875rem; color:var(--text-muted); margin-bottom:1.5rem;">Six specialised agents run in sequence. Their combined outputs build the final verification report.</p>
+      <div class="agent-grid" style="margin-bottom:1.5rem;">
+        <div class="agent-box"><div class="agent-num">1</div><div class="agent-name">Document Analysis</div><div class="agent-role">Extracts company, recruiter, salary, URLs, payment mentions, urgency phrases</div></div>
+        <div class="agent-box"><div class="agent-num">2</div><div class="agent-name">Company Verification</div><div class="agent-role">Checks email domain, free email providers, domain vs company name consistency</div></div>
+        <div class="agent-box"><div class="agent-num">3</div><div class="agent-name">Scam Pattern Detection</div><div class="agent-role">Detects payment requests, urgency, suspicious links, sensitive info requests</div></div>
+        <div class="agent-box"><div class="agent-num">4</div><div class="agent-name">Consistency Analysis</div><div class="agent-role">Cross-checks company name, email, URL domains, and contact info for mismatches</div></div>
+        <div class="agent-box"><div class="agent-num">5</div><div class="agent-name">Risk Assessment</div><div class="agent-role">Calculates transparent 0–100 score with full per-indicator breakdown</div></div>
+        <div class="agent-box"><div class="agent-num">6</div><div class="agent-name">Recommendations</div><div class="agent-role">Generates prioritised, evidence-based recommended actions</div></div>
+      </div>
+
+      <!-- Risk levels -->
+      <div class="risk-strip">
+        <div class="risk-tile" style="background:var(--green-bg); border-color:var(--green-border);">
+          <div class="risk-tile-score" style="color:var(--green);">0–29</div>
+          <div class="risk-tile-label" style="color:var(--green);">Low Risk</div>
+        </div>
+        <div class="risk-tile" style="background:var(--yellow-bg); border-color:var(--yellow-border);">
+          <div class="risk-tile-score" style="color:var(--yellow);">30–59</div>
+          <div class="risk-tile-label" style="color:var(--yellow);">Needs Verification</div>
+        </div>
+        <div class="risk-tile" style="background:var(--orange-bg); border-color:var(--orange-border);">
+          <div class="risk-tile-score" style="color:var(--orange);">60–79</div>
+          <div class="risk-tile-label" style="color:var(--orange);">High Risk</div>
+        </div>
+        <div class="risk-tile" style="background:var(--red-bg); border-color:var(--red-border);">
+          <div class="risk-tile-score" style="color:var(--red);">80–100</div>
+          <div class="risk-tile-label" style="color:var(--red);">Very High Risk</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Responsible language -->
+    <div class="report-section mb-4">
+      <div class="report-section-title">⚖️ Responsible Language</div>
+      <div class="grid-2">
+        <div>
+          <div style="font-size:.72rem; font-weight:700; color:var(--red); text-transform:uppercase; margin-bottom:.5rem;">We Never Say</div>
+          <ul style="font-size:.875rem; color:var(--text-muted); padding-left:1.25rem; line-height:2.1;">
+            <li>"This is definitely a scam."</li>
+            <li>"This company is fraudulent."</li>
+            <li>"Do not respond to this offer."</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size:.72rem; font-weight:700; color:var(--green); text-transform:uppercase; margin-bottom:.5rem;">We Always Say</div>
+          <ul style="font-size:.875rem; color:var(--text-muted); padding-left:1.25rem; line-height:2.1;">
+            <li>"Multiple high-risk indicators detected."</li>
+            <li>"Could not independently verify."</li>
+            <li>"Independent verification recommended."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center; padding:2rem 0;">
+      <h2 style="font-size:1.5rem; font-weight:800; color:var(--navy); margin-bottom:.75rem;">Ready to verify an offer?</h2>
+      <p style="color:var(--text-muted); margin-bottom:1.5rem; font-size:.9rem;">No account required. Paste, upload, or try a demo offer.</p>
+      <a href="verify.html" class="btn btn-primary btn-lg">🔍 Start Verification</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">🛡 OfferShield AI</div>
+        <p>AI-powered offer verification. Results are advisory and educational only.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="verify.html">Verify an Offer</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="login.html">Log In</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 OfferShield AI. For demonstration purposes only.</span>
+      <span>Not legal advice. Always verify independently.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

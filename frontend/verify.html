@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify an Offer — OfferShield AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ─────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-shield">🛡</div>
+      OfferShield AI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="verify.html" class="active">Verify Offer</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-actions" id="navActions">
+      <a href="login.html"    class="btn btn-ghost   btn-sm" id="navLogin">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" id="navRegister">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ────────────────────────────────────── -->
+<div class="verify-page-header">
+  <div class="container-md">
+    <div class="label-tag">Verification Workspace</div>
+    <h1 style="font-size:1.6rem; font-weight:800; color:var(--navy); margin-bottom:.35rem;">
+      Verify a Job or Internship Offer
+    </h1>
+    <p style="font-size:.9rem; color:var(--text-muted);">
+      Upload a document, paste a message, or try a demo offer. No account required.
+    </p>
+  </div>
+</div>
+
+<!-- ── BODY ───────────────────────────────────────────── -->
+<div class="verify-body">
+  <div class="verify-inner">
+
+    <!-- Demo Mode Banner -->
+    <div id="demoBanner" class="demo-banner hidden">
+      <span class="demo-banner-text">
+        ⚠️ <strong>Demo Mode:</strong> All companies, names, and offer details used in demo examples are entirely fictional and for demonstration purposes only.
+      </span>
+      <button onclick="clearDemoMode()" class="btn btn-ghost btn-sm">✕ Clear</button>
+    </div>
+
+    <!-- ── INPUT SECTION ───────────────────────────────── -->
+    <div id="inputSection">
+
+      <!-- Tabs -->
+      <div class="tab-list">
+        <button class="tab-btn active" data-tab="tabText">📝 Paste Message</button>
+        <button class="tab-btn"        data-tab="tabUpload">📎 Upload File</button>
+        <button class="tab-btn"        data-tab="tabUrl">🔗 Enter URL</button>
+        <button class="tab-btn"        data-tab="tabDemo">🎯 Demo Offers</button>
+      </div>
+
+      <!-- ── TAB: PASTE TEXT ──────────────────────────── -->
+      <div class="tab-panel active" id="tabText">
+        <div class="input-card">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="offerText">Paste your offer message, email, or job description</label>
+            <textarea
+              class="form-textarea"
+              id="offerText"
+              style="min-height:220px;"
+              placeholder="Paste the complete job or internship offer message here...
+
+Examples you can paste:
+  • WhatsApp recruitment message
+  • Email content from a recruiter
+  • LinkedIn or Telegram message
+  • Copied job description with contact details"></textarea>
+            <div class="form-hint">Paste the full message for best results. Minimum 20 characters required.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB: UPLOAD FILE ─────────────────────────── -->
+      <div class="tab-panel" id="tabUpload">
+        <div class="input-card">
+          <label class="form-label">Upload offer document or screenshot</label>
+
+          <div class="drop-zone" id="dropZone">
+            <div class="drop-zone-icon">📎</div>
+            <div class="drop-zone-title">Drag &amp; drop your file here, or click to browse</div>
+            <div class="drop-zone-sub">Offer letter, email screenshot, or internship document</div>
+            <div class="format-tags">
+              <span class="format-tag">PDF</span>
+              <span class="format-tag">DOC</span>
+              <span class="format-tag">DOCX</span>
+              <span class="format-tag">JPG</span>
+              <span class="format-tag">PNG</span>
+            </div>
+            <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display:none;" />
+          </div>
+
+          <div id="fileChosen" class="file-chosen hidden">
+            <span>📄</span>
+            <span class="file-chosen-name" id="fileName"></span>
+            <span class="file-remove" id="fileRemove" title="Remove file">✕</span>
+          </div>
+
+          <div class="form-hint mt-2">Max size: 10 MB. Supported: PDF, DOC, DOCX, JPG, PNG</div>
+          <div class="disclaimer mt-2">
+            Do not upload documents containing passwords, OTPs, bank account details, or identity documents beyond what is required for this verification.
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB: URL ─────────────────────────────────── -->
+      <div class="tab-panel" id="tabUrl">
+        <div class="input-card">
+          <div class="form-group">
+            <label class="form-label" for="offerUrl">Enter a publicly accessible job or offer URL</label>
+            <input type="url" class="form-input" id="offerUrl" placeholder="https://www.example.com/job-posting" />
+            <div class="form-hint">Enter the URL of a job listing, offer portal, or recruitment page.</div>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="urlContext">Additional context (optional)</label>
+            <textarea class="form-textarea" id="urlContext" style="min-height:100px;"
+              placeholder="Optionally paste additional context about this offer — e.g. the email you received alongside the link..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB: DEMO OFFERS ─────────────────────────── -->
+      <div class="tab-panel" id="tabDemo">
+        <div class="input-card">
+          <div class="label-tag">Fictional Demo Offers</div>
+          <p style="font-size:.875rem; color:var(--text-muted); margin-bottom:1.25rem; margin-top:-.35rem;">
+            Select one of the fictional demo offers below to see how OfferShield AI analyses different risk scenarios.
+            All companies, names, and offer details are entirely made-up for demonstration only.
+          </p>
+
+          <div class="demo-grid">
+            <!-- High Risk -->
+            <div class="demo-card demo-hr" id="demoCard-high_risk" onclick="selectDemo('high_risk')">
+              <div class="demo-risk-pill">🔴 Very High Risk</div>
+              <div class="demo-company">NextGen Career Solutions</div>
+              <div class="demo-role">Software Developer Intern</div>
+              <div class="demo-tags">
+                <span class="demo-tag">Upfront fee</span>
+                <span class="demo-tag">Urgency</span>
+                <span class="demo-tag">Free email</span>
+                <span class="demo-tag">Domain mismatch</span>
+              </div>
+            </div>
+
+            <!-- Needs Verification -->
+            <div class="demo-card demo-nv" id="demoCard-needs_verification" onclick="selectDemo('needs_verification')">
+              <div class="demo-risk-pill">🟡 Needs Verification</div>
+              <div class="demo-company">InnovateTech Solutions</div>
+              <div class="demo-role">Business Development Intern</div>
+              <div class="demo-tags">
+                <span class="demo-tag">No interview</span>
+                <span class="demo-tag">Incomplete info</span>
+                <span class="demo-tag">Location inconsistency</span>
+              </div>
+            </div>
+
+            <!-- Low Risk -->
+            <div class="demo-card demo-lr" id="demoCard-low_risk" onclick="selectDemo('low_risk')">
+              <div class="demo-risk-pill">🟢 Low Risk</div>
+              <div class="demo-company">TechBridge India Pvt. Ltd.</div>
+              <div class="demo-role">Frontend Development Intern</div>
+              <div class="demo-tags">
+                <span class="demo-tag">Consistent info</span>
+                <span class="demo-tag">No payment</span>
+                <span class="demo-tag">Clear contact</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="demoSelectedAlert">
+            ✓ Demo offer selected. Click <strong>Start Verification</strong> below to analyse it.
+          </div>
+        </div>
+      </div>
+
+      <!-- Error Alert -->
+      <div class="alert alert-error" id="inputError"></div>
+
+      <!-- Submit bar -->
+      <div class="submit-bar">
+        <div class="disclaimer" style="max-width:460px; font-size:.78rem;">
+          Your submission is processed for risk analysis only. Do not include passwords, OTPs, or bank credentials.
+        </div>
+        <button class="btn btn-primary btn-lg" id="startBtn" onclick="startVerification()">
+          🔍 Start Verification
+        </button>
+      </div>
+
+    </div><!-- /inputSection -->
+
+    <!-- ── PROCESSING SCREEN ───────────────────────────── -->
+    <div class="processing-wrap" id="processingScreen">
+      <div class="spinner-ring"></div>
+      <div class="proc-title">Analysing your offer…</div>
+      <div class="proc-sub">Our verification agents are reviewing your submission. This takes a few seconds.</div>
+      <ul class="proc-steps" id="procSteps">
+        <li class="proc-step" data-step="0"><div class="proc-dot"></div> Extracting offer information</li>
+        <li class="proc-step" data-step="1"><div class="proc-dot"></div> Identifying company information</li>
+        <li class="proc-step" data-step="2"><div class="proc-dot"></div> Analysing recruiter and contact details</li>
+        <li class="proc-step" data-step="3"><div class="proc-dot"></div> Detecting suspicious patterns</li>
+        <li class="proc-step" data-step="4"><div class="proc-dot"></div> Checking information consistency</li>
+        <li class="proc-step" data-step="5"><div class="proc-dot"></div> Calculating risk assessment score</li>
+        <li class="proc-step" data-step="6"><div class="proc-dot"></div> Generating verification recommendations</li>
+      </ul>
+    </div>
+
+    <!-- ── REPORT CONTAINER ────────────────────────────── -->
+    <div id="reportContainer" class="hidden"></div>
+
+  </div><!-- /verify-inner -->
+</div><!-- /verify-body -->
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/report.js"></script>
+<script src="js/verify.js"></script>
+</body>
+</html>

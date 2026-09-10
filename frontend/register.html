@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — OfferShield AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-shield">🛡</div>
+      OfferShield AI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="verify.html">Verify Offer</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-actions" id="navActions">
+      <a href="login.html"    class="btn btn-ghost   btn-sm" id="navLogin">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" id="navRegister">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="auth-logo-icon">🛡</span>
+      <h2>Create Your Account</h2>
+      <p class="auth-card-sub">Save your verification history and access your personal dashboard.</p>
+    </div>
+
+    <div class="alert alert-error"   id="registerError"></div>
+    <div class="alert alert-success" id="registerSuccess"></div>
+
+    <form id="registerForm" onsubmit="handleRegister(event)">
+      <div class="form-group">
+        <label class="form-label" for="regName">Full Name</label>
+        <input type="text" class="form-input" id="regName"
+               placeholder="Your full name" required minlength="2" maxlength="100" autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="regEmail">Email Address</label>
+        <input type="email" class="form-input" id="regEmail"
+               placeholder="you@example.com" required autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="regPassword">Password</label>
+        <input type="password" class="form-input" id="regPassword"
+               placeholder="At least 6 characters" required minlength="6" autocomplete="new-password" />
+        <div class="form-hint">Minimum 6 characters.</div>
+      </div>
+      <button type="submit" class="btn btn-primary w-100" id="registerBtn" style="margin-top:.25rem;">
+        Create Account
+      </button>
+    </form>
+
+    <div class="auth-or"><span>or</span></div>
+    <a href="verify.html" class="btn btn-outline w-100">🔍 Try Without an Account</a>
+
+    <div class="auth-footer">
+      Already have an account? <a href="login.html">Log In</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

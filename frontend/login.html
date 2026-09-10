@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — OfferShield AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-shield">🛡</div>
+      OfferShield AI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="verify.html">Verify Offer</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-actions" id="navActions">
+      <a href="login.html"    class="btn btn-ghost   btn-sm active" id="navLogin">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm"         id="navRegister">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <span class="auth-logo-icon">🛡</span>
+      <h2>Welcome Back</h2>
+      <p class="auth-card-sub">Log in to access your verification history and dashboard.</p>
+    </div>
+
+    <div class="alert alert-error"   id="loginError"></div>
+    <div class="alert alert-success" id="loginSuccess"></div>
+
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label class="form-label" for="loginEmail">Email Address</label>
+        <input type="email" class="form-input" id="loginEmail"
+               placeholder="you@example.com" required autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="loginPassword">Password</label>
+        <input type="password" class="form-input" id="loginPassword"
+               placeholder="Your password" required autocomplete="current-password" />
+      </div>
+      <button type="submit" class="btn btn-primary w-100" id="loginBtn" style="margin-top:.25rem;">
+        Log In
+      </button>
+    </form>
+
+    <div class="auth-or"><span>or</span></div>
+    <a href="verify.html" class="btn btn-outline w-100">🔍 Try Without an Account</a>
+
+    <div class="auth-footer">
+      Don't have an account? <a href="register.html">Create one free</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

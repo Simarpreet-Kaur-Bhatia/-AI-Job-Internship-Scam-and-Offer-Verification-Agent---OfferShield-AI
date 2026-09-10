@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OfferShield AI — Verify Before You Trust</title>
+  <meta name="description" content="AI-powered job and internship offer verification. Detect suspicious patterns, analyze risk, and protect yourself before accepting any offer." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+<!-- ── NAVBAR ─────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-shield">🛡</div>
+      OfferShield AI
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="verify.html">Verify Offer</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+    </ul>
+    <div class="nav-actions" id="navActions">
+      <a href="login.html"    class="btn btn-ghost   btn-sm" id="navLogin">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm" id="navRegister">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- Left: text -->
+    <div class="hero-text">
+      <div class="hero-badge">🛡 AI-Powered Offer Verification</div>
+      <h1>Before You Accept an Offer,<br><span class="highlight">Verify It.</span></h1>
+      <p class="hero-sub">
+        Upload a job or internship offer, paste a recruitment message, or submit an offer URL.
+        OfferShield AI extracts key details, detects warning indicators, and gives you an
+        <strong>explainable risk assessment</strong> with clear next steps.
+      </p>
+      <div class="hero-cta">
+        <a href="verify.html" class="btn btn-primary btn-lg">🔍 Verify an Offer</a>
+        <a href="verify.html?demo=high_risk" class="btn btn-outline btn-lg">Try a Demo</a>
+      </div>
+      <div class="disclaimer">
+        <strong>Disclaimer:</strong> OfferShield AI provides automated risk analysis and educational guidance.
+        It does not constitute a legally definitive determination about any offer or organisation.
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-value">6</div>
+          <div class="hero-stat-label">AI Verification Agents</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">7+</div>
+          <div class="hero-stat-label">Risk Pattern Categories</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">0–100</div>
+          <div class="hero-stat-label">Explainable Risk Score</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">Free</div>
+          <div class="hero-stat-label">No Account Needed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: workflow card -->
+    <div class="hero-visual">
+      <div class="workflow-card">
+        <div class="workflow-card-label">Verification Workflow</div>
+
+        <div class="wf-step">
+          <div class="wf-icon">📄</div>
+          <div class="wf-text">Submit Job / Internship Offer</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-step">
+          <div class="wf-icon">🔍</div>
+          <div class="wf-text">Extract Key Information</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-step">
+          <div class="wf-icon">🏢</div>
+          <div class="wf-text">Analyse Company &amp; Recruiter</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-step">
+          <div class="wf-icon">⚠️</div>
+          <div class="wf-text">Detect Suspicious Patterns</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-step">
+          <div class="wf-icon">📊</div>
+          <div class="wf-text">Calculate Risk Score (0–100)</div>
+        </div>
+        <div class="wf-arrow">↓</div>
+        <div class="wf-step">
+          <div class="wf-icon">✅</div>
+          <div class="wf-text">Receive Verification Report</div>
+        </div>
+
+        <!-- Live example tag -->
+        <div style="margin-top:1.25rem; padding:.75rem 1rem; background:var(--red-bg); border:1px solid var(--red-border); border-radius:var(--r-lg);">
+          <div style="font-size:.7rem; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.35rem;">Example Result</div>
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span style="font-size:.82rem; color:var(--text);">NextGen Career Solutions</span>
+            <span class="badge badge-very-high">🔴 82/100</span>
+          </div>
+          <div style="font-size:.75rem; color:var(--text-muted); margin-top:.25rem;">Upfront payment · Free email domain · Urgency language</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── WHAT WE SOLVE ──────────────────────────────────── -->
+<section class="stats-band">
+  <div class="stats-band-inner">
+    <div>
+      <div class="stat-num">7+</div>
+      <div class="stat-lbl">Warning Pattern Types Detected</div>
+    </div>
+    <div>
+      <div class="stat-num">6</div>
+      <div class="stat-lbl">Specialised AI Agents</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-lbl">Transparent Score Breakdown</div>
+    </div>
+    <div>
+      <div class="stat-num">0</div>
+      <div class="stat-lbl">Account Required to Try</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ───────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label-tag">What We Do</div>
+      <h2>Evidence-Based Offer Verification</h2>
+      <p>Not just a scam detector — a transparent platform that shows the evidence and reasoning behind every risk assessment.</p>
+    </div>
+    <div class="feature-grid">
+
+      <div class="card">
+        <div class="card-icon">🔎</div>
+        <h3>Evidence-Based Analysis</h3>
+        <p>Analyse offer documents, messages, company details, recruiter information, payment requests, and suspicious communication patterns with cited evidence.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Explainable Risk Score</h3>
+        <p>No black-box results. Every risk score shows the exact indicators and evidence that contributed — so you understand <em>why</em> a score was assigned.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🗺️</div>
+        <h3>Actionable Next Steps</h3>
+        <p>Receive prioritised recommendations for what to independently verify before accepting, responding, or making any payment.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <h3>Company Consistency Check</h3>
+        <p>Verify whether recruiter email domains, company names, websites, and contact details are mutually consistent — or if mismatches exist.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <h3>Verification Trail</h3>
+        <p>See a step-by-step, expandable reasoning trail showing exactly how the AI reached its risk assessment — from input to final score.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📁</div>
+        <h3>Verification History</h3>
+        <p>Save and access all your past verification reports from your personal dashboard, with risk history and statistics at a glance.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW RISK IS SCORED ──────────────────────────────── -->
+<section class="section section-alt">
+  <div class="container-md">
+    <div class="section-header">
+      <div class="label-tag">Risk Assessment</div>
+      <h2>Transparent 0 – 100 Risk Scoring</h2>
+      <p>Every point in the score is traceable to a specific indicator with evidence. Nothing is a black box.</p>
+    </div>
+    <div class="risk-strip">
+      <div class="risk-tile" style="background:var(--green-bg); border-color:var(--green-border);">
+        <div class="risk-tile-score" style="color:var(--green);">0 – 29</div>
+        <div class="risk-tile-label" style="color:var(--green);">Low Risk</div>
+      </div>
+      <div class="risk-tile" style="background:var(--yellow-bg); border-color:var(--yellow-border);">
+        <div class="risk-tile-score" style="color:var(--yellow);">30 – 59</div>
+        <div class="risk-tile-label" style="color:var(--yellow);">Needs Verification</div>
+      </div>
+      <div class="risk-tile" style="background:var(--orange-bg); border-color:var(--orange-border);">
+        <div class="risk-tile-score" style="color:var(--orange);">60 – 79</div>
+        <div class="risk-tile-label" style="color:var(--orange);">High Risk</div>
+      </div>
+      <div class="risk-tile" style="background:var(--red-bg); border-color:var(--red-border);">
+        <div class="risk-tile-score" style="color:var(--red);">80 – 100</div>
+        <div class="risk-tile-label" style="color:var(--red);">Very High Risk</div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--r-xl); padding:1.5rem;">
+        <div style="font-size:.78rem; font-weight:700; color:var(--red); text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem;">Example Score Breakdown — 82/100</div>
+        <div class="score-row"><span class="score-ind">Upfront payment request</span><span class="score-pts">+35</span></div>
+        <div class="score-row"><span class="score-ind">Personal email provider</span><span class="score-pts">+20</span></div>
+        <div class="score-row"><span class="score-ind">Urgency language detected</span><span class="score-pts">+20</span></div>
+        <div class="score-row"><span class="score-ind">Consistency: Email vs Company</span><span class="score-pts">+7</span></div>
+        <div class="score-row" style="border-top:2px solid var(--border); margin-top:.5rem; padding-top:.75rem; font-weight:800;">
+          <span class="score-ind">Total</span><span class="score-pts" style="font-size:1rem;">82/100</span>
+        </div>
+      </div>
+      <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--r-xl); padding:1.5rem;">
+        <div style="font-size:.78rem; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:.06em; margin-bottom:1rem;">What We Detect</div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:.6rem;">
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--red);">●</span> Upfront fees, deposits, registration charges</li>
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--orange);">●</span> Urgency and pressure tactics</li>
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--orange);">●</span> Free / personal email for official recruiter comms</li>
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--yellow);">●</span> Company–recruiter information mismatches</li>
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--yellow);">●</span> Bypassed or non-standard recruitment process</li>
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--yellow);">●</span> Requests for sensitive personal information</li>
+          <li style="font-size:.875rem; color:var(--text-muted); display:flex; align-items:center; gap:.5rem;"><span style="color:var(--text-light);">●</span> Suspicious or shortened URLs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MULTI-AGENT ARCHITECTURE ───────────────────────── -->
+<section class="section">
+  <div class="container-md">
+    <div class="section-header">
+      <div class="label-tag">Under the Hood</div>
+      <h2>Multi-Agent Verification System</h2>
+      <p>Six specialised AI agents work in sequence to produce a comprehensive, explainable result.</p>
+    </div>
+    <div class="agent-grid">
+      <div class="agent-box">
+        <div class="agent-arrow">→</div>
+        <div class="agent-num">1</div>
+        <div class="agent-name">Document Analysis</div>
+        <div class="agent-role">Extract company, recruiter, salary, URLs, payment mentions</div>
+      </div>
+      <div class="agent-box">
+        <div class="agent-arrow">→</div>
+        <div class="agent-num">2</div>
+        <div class="agent-name">Company Verification</div>
+        <div class="agent-role">Check email domain, free providers, domain match</div>
+      </div>
+      <div class="agent-box">
+        <div class="agent-num">3</div>
+        <div class="agent-name">Scam Pattern Detection</div>
+        <div class="agent-role">Detect 7+ warning indicator categories</div>
+      </div>
+      <div class="agent-box">
+        <div class="agent-arrow">→</div>
+        <div class="agent-num">4</div>
+        <div class="agent-name">Consistency Analysis</div>
+        <div class="agent-role">Cross-check company name, email, URLs, contact info</div>
+      </div>
+      <div class="agent-box">
+        <div class="agent-arrow">→</div>
+        <div class="agent-num">5</div>
+        <div class="agent-name">Risk Assessment</div>
+        <div class="agent-role">Calculate transparent 0–100 score with full breakdown</div>
+      </div>
+      <div class="agent-box">
+        <div class="agent-num">6</div>
+        <div class="agent-name">Recommendations</div>
+        <div class="agent-role">Generate prioritised, evidence-based next steps</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="how-it-works.html" class="btn btn-outline">Learn more about the system →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────── -->
+<section class="cta-section">
+  <div class="container-sm">
+    <div class="label-tag" style="background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.9);">Get Started Free</div>
+    <h2>Verify your next offer before you respond.</h2>
+    <p>Upload an offer, paste a message, or try a demo — no account required.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="verify.html" class="btn btn-lg" style="background:#fff; color:var(--navy); border-color:#fff;">🔍 Verify an Offer Now</a>
+      <a href="verify.html?demo=high_risk" class="btn btn-outline btn-lg" style="color:#fff; border-color:rgba(255,255,255,.4);">Try Demo Offers</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">🛡 OfferShield AI</div>
+        <p>AI-powered job and internship offer verification. Helping students and job seekers make informed, evidence-based decisions.</p>
+        <p style="margin-top:.75rem; font-size:.78rem; opacity:.5;">All demo company names, offer examples, and recruiter details used on this platform are entirely fictional.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="verify.html">Verify an Offer</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="how-it-works.html">How It Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="register.html">Create Account</a></li>
+          <li><a href="login.html">Log In</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 OfferShield AI. For demonstration purposes only.</span>
+      <span>Not legal or professional advice. Always verify independently.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
